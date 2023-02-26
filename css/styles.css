@@ -168,7 +168,7 @@ img {
 /*===== Hero =====*/
 
 .hero {
-    width: 1600px;
+    max-width: 1600px;
     padding-top: 200px;
     padding-bottom: 200px;
     margin-left: auto;
@@ -245,7 +245,6 @@ img {
 .filters-button:focus {
     color: var(--background-color);
     background-color: var(--accent-color);
-    border-radius: 4px;
     box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08), 0px 2px 2px rgba(0, 0, 0, 0.12);
 }
 
@@ -304,6 +303,9 @@ img {
 }
 
 .section-icon-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 270px;
     height: 120px;
     margin-bottom: 30px;
@@ -362,7 +364,7 @@ img {
 }
 
 .team-card-subtitle {
-    margin-bottom: 10px ;
+    margin-bottom: 10px;
 
     font-weight: 500;
     font-size: 16px;
@@ -379,7 +381,7 @@ img {
     text-align: center;
     letter-spacing: 0.03em;
     color: var(--secondary-text-color);
-    margin-bottom: 30px;
+    margin-bottom: 16px;
 }
 
 .social-list {
@@ -432,11 +434,15 @@ img {
     width: 370px; 
     background: var(--background-color);
     border: 1px solid #EEEEEE;
-    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
 }
 
-.cards-box:hover {
-    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+.cards-box-link {
+    color: var(--secondary-text-color);
+}
+
+.cards-box:hover,
+.cards-box:focus {
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
 }
 
 .cards-box:nth-child(3n) {
@@ -477,13 +483,6 @@ img {
     margin-left: 30px;
     }
 
-.icon-clients {
-    margin-top: 16px;
-    margin-right: 32px;
-    margin-bottom: 16px;
-    margin-left: 32px;
-}
-
 .link-icon {
     display: flex;
     width: 170px;
@@ -493,7 +492,6 @@ img {
     border: 1px solid #afb1b8;
     border-radius: 4px;
     fill: #AFB1B8;
-
 }
 
 .link-icon:hover,
@@ -573,6 +571,7 @@ img {
     line-height: 1.14;
     letter-spacing: 0.03em;
     text-transform: uppercase;
+    margin-bottom: 20px;
     
     color: var(--background-color)
 }
@@ -580,8 +579,10 @@ img {
 .footer-list-icon {
     display: flex;
     margin-top: 20px;
-    width: 206px;
-    justify-content: space-between;
+}
+
+.footer-item-icon:not(:last-child) {
+    margin-right: 10px;
 }
 
 .footer-link-icon {
